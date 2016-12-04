@@ -81,8 +81,24 @@ public class FileUtils {
         this.activity = activity;
     }
 
+	static boolean fileExtIn(String ext, String[] arr) {
+		for (int t = 0; t < arr.length; t++) {
+			if (ext.equalsIgnoreCase(arr[t]))
+				return true;
+		}
+		return false;
+	}
+	static boolean isExtImage ( String ext ) {
+		return FileUtils.fileExtIn ( ext, new String[]{".jpg", ".png", ".gif", ".jpeg", ".tiff"} );
+	}
+	static boolean isExtVideo ( String ext ) {
+		return FileUtils.fileExtIn ( ext, new String[]{".mp4", ".3gp", ".flv", ".ogg", ".ogv", ".m4v", ".mov", ".mpg", ".mpeg"} );
+	}
+	static boolean isExtAudio ( String ext ) {
+		return FileUtils.fileExtIn ( ext, new String[]{".mp3", ".wav", ".m4a", ".mp2" } );
+	}
 	/**
-	 * 
+	 *
 	 * @param old		the file to be copied
 	 * @param newDir	the directory to move the file to
 	 * @return
