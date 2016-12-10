@@ -648,15 +648,15 @@ public class FilebrowserULTRAActivity extends ListActivity implements OnSharedPr
                     } else {
                         OnclickOperation(gestname);
                     }
-
                 }
                 break;
-
         }
-
     }
 
-    public File currentDirectory() {
+    public File currentDirectory ( )  {
+        if ( currentdir == null ) {
+             currentdir = new String("/");
+        }
         return new File(currentdir);
     }
 
